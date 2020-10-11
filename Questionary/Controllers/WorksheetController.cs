@@ -115,6 +115,11 @@ namespace Questionary.Controllers
 
             return View(resultUser);
         }
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Input");
+        }
         public ActionResult ErrorView() 
         {
             return View();
