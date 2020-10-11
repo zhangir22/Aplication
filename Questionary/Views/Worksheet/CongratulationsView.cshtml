@@ -1,0 +1,53 @@
+﻿@model Questionary.Models.ResultUser
+@{
+    ViewBag.Title = "CongratulationsView";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - приложение ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container">
+        <div class="navbar-brand">
+            <h1 id="TextErro" class="text-center navbar-text "><strong> @User.Identity.Name</strong></h1>
+        </div>
+    </div>
+    <br />
+    <hr />
+    <div class="container">
+        <div class="navbar-brand">
+            <table class="table">
+                <tr>
+                    <th>Дата сдачи</th>
+                    <th>Имя</th>
+                    <th>Правильные ответы</th>
+                    <th>Не правильные ответы</th>
+                    <th>Процент вашей сдачи</th>
+                </tr>
+                <tr>
+                    <td>@Model.DateComplete</td>
+                    <td>@Model.Name</td>
+                    <td>@Model.RightAnswer</td>
+                    <td>@Model.LieAnswer</td>
+                    <td>@Model.Porsent</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    #TextErro {
+        position: relative;
+        left: 300px;
+    }
+</style>
+
+

@@ -1,0 +1,76 @@
+﻿@model Questionary.Models.TestForUser
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>TestForUser</h4>
+    <hr />
+    <!--
+    //Html.ValidationSummary(true, "", new { //class = "text-danger" })
+    <div class="form-group">
+        //Html.LabelFor(model => model.DateComplete, htmlAttributes: new { //class = "control-label col-md-2" })
+        <div class="col-md-10">
+            //Html.EditorFor(model => model.DateComplete, new { htmlAttributes = new { //class = "form-control" } })
+            //Html.ValidationMessageFor(model => model.DateComplete, "", new { //class = "text-danger" })
+        </div>
+    </div>
+        -->
+    <div class="form-group">
+        @Html.LabelFor(model => model.CapitalKZ, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CapitalKZ, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CapitalKZ, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CountCityKZ, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CountCityKZ, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CountCityKZ, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LanguageKZ, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LanguageKZ, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LanguageKZ, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DateFounded, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DateFounded, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DateFounded, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!--
+            <div class="form-group">
+                //Html.LabelFor(model => model.ClientsId, htmlAttributes: new { //class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    //Html.EditorFor(model => model.ClientsId, new { htmlAttributes = new { class = "form-control" } })
+                    //Html.ValidationMessageFor(model => model.ClientsId, "", new { //class = "text-danger" })
+                </div>
+            </div>
+    -->
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
